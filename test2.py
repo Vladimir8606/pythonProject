@@ -1,6 +1,7 @@
-list_of_tuples = [('IT_VLAN', 320),
-('Mngmt_VLAN', 99),
-('User_VLAN', 1010),
-('DB_VLAN', 11)]
 
-print(sorted(list_of_tuples, key=lambda x: x[1]))
+dict1={1:2, 3:4}
+dict2={5:6}
+a=9
+b=0
+dict1.update({a:b})
+print(dict1)
