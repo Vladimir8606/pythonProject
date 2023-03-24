@@ -16,8 +16,8 @@ def check_reachability(ip_address):
     result=(reachable, unreachable) # делаем кортеж из словарей
     return result
 
-
-print(check_reachability(list_of_ip))
+if __name__=="__main__":
+    print(check_reachability(list_of_ip))
 
 
 
