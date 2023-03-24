@@ -95,7 +95,6 @@ def create_network_map (filenames):
             result.update(parse_cdp_neighbors(f.read()))
     return result
 
-#print(create_network_map(infiles))
 
 output="C:\\python\\topology.sgv"
 if __name__ == "__main__":
