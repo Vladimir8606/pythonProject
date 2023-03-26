@@ -4,7 +4,7 @@ unreachable=[]
 result=()
 
 
-list_of_ip = ["10.1.1.1", '8.8.8.8', '192.168.0.1']
+list_of_ip = ["192.168.0.2", '8.8.8.8', '192.168.0.1']
 
 def check_reachability(ip_address):
     for ip in ip_address:
@@ -18,6 +18,7 @@ def check_reachability(ip_address):
 
 if __name__=="__main__":
     print(check_reachability(list_of_ip))
+
 
 
 

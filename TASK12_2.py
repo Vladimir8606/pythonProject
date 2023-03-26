@@ -5,7 +5,7 @@ result=[]
 it=[]
 
 def convert_ranges_to_ip_list(ip_list):
-    for ranges in list1:
+    for ranges in ip_list:
         c = ranges.find('-')
         if c == -1:
             result.append(ranges)
@@ -33,6 +33,8 @@ def convert_ranges_to_ip_list(ip_list):
                 d.append(str(ip))
                 h = ','.join(d).replace(',', '.')
                 result.append(h)
-    return result
+    list_ip=result
+    return list_ip
 
-print(convert_ranges_to_ip_list(list1))
+if __name__=="__main__":
+    print(convert_ranges_to_ip_list(list1))
