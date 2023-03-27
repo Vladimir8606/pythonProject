@@ -16,7 +16,7 @@ def get_ip_from_cfg(file):
                 if match:
                     ip_mask=re.findall(regex, items)
                     if ip_mask:
-                        result[match.groups()]=ip_mask
+                        result[match.groups()[0]]=ip_mask
     return result
 
 print(get_ip_from_cfg(filename))
