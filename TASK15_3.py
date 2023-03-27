@@ -5,6 +5,7 @@ filename_in='C:\\python\\cisco_nat_config.txt'
 filename_out='C:\\python\\cisco_ASA_config.txt'
 
 def convert_ios_nat_to_asa(input, output):
+    '''Функция конвертирует NAT config IOS для ASA'''
     regex=(r'ip nat inside source (?P<nat_type>\S+) +' #static or dynamic
            r'(?P<proto>\S+) +' # protocol
            r'(?P<ip>\S+) +' # IP
