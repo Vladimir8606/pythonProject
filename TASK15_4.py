@@ -4,7 +4,7 @@ import re
 filename = 'C:\\python\\config_r1.txt'
 
 def get_ints_without_description(file):
-    '''Функция изет интерфейсы на которых нет description и выводит их на stdout'''
+    '''Функция ищет интерфейсы на которых нет description и выводит их на stdout'''
     regex1=(r'interface (\S+)')
     regex2=(r'description (\S+)')
     with open(file) as f:
