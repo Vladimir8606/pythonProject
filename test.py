@@ -1,24 +1,23 @@
 import re
 
 
-filename = 'C:\\python\\config_r1.txt'
-
-def get_ints_without_description(file):
-    regex1=(r'interface (\S+)')
-    regex2=(r'description (\S+)')
+filename='C:\\python\sh_cdp_n_sw1_1.txt'
+def generate_description_from_cdp(file):
+    regex=(r'(?P<hostname>\S+) +' # remote hostname
+           r'(?P<int>\S+) + (?P<port>\S+) +' # local intf
+           r'\d+ +' # hold timer
+           r'\S+ + ?\S+ + ?\S+ +' # capability
+           r'\S +'  # platform
+           r'(?P<rint>\S+) + (?P<rport>\S+)') # remote intf
     with open(file) as f:
         a=f.read()
-        list1=a.split('!')
-        for items in list1:
-            b=items.split('\n')
-            for item in b:
-                match=re.match(regex1,item)
-                if match:
-                    description=re.findall(regex2, items)
-                    if not description:
-                        print(match.group(1))
+        match=re.findall(regex,a)
+        if match:
+            print(match.groups())
 
 
-get_ints_without_description(filename)
 
 
+
+
+generate_description_from_cdp(filename)
