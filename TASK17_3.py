@@ -1,11 +1,9 @@
-import yaml
+import csv
 import re
 import glob
 
 result={}
-res={}
 r={}
-output="C:\\python\\topology.yaml"
 
 def find_hostname(sh_cdp):
     regexp=r'^(.+)[>#]'
@@ -23,7 +21,6 @@ def parse_sh_cdp_neighbors(sh_cdp):
              r'\S+ +'  # platform
              r'(?P<rint>\S+ +\S+)')  # remote intf
     list1=sh_cdp.split('\n')
-    r={}
     for lines in list1:
         a={}
         b={}
@@ -36,21 +33,11 @@ def parse_sh_cdp_neighbors(sh_cdp):
     return result
 
 
-def generate_topology_from_cdp(list_of_files, save_to_filename):
-    result = parse_sh_cdp_neighbors(list_of_files)
-    if 'C:\\python\\' in str(save_to_filename):
-        with open(save_to_filename, 'a') as f:
-            yaml.dump(result,f)
-    else:
-        result=None
-    return result
+
 
 
 
 if __name__=='__main__':
-    sh_cdp_n = glob.glob("C:\\python\\sh_cdp_n*")
-    for items in sh_cdp_n:
-        with open(items) as f:
-            file=f.read()
-            res=(generate_topology_from_cdp(file,output))
-    print(res)
+    with open('C:\\python\\sh_cdp_n_sw1.txt') as f:
+        file=f.read()
+    print(parse_sh_cdp_neighbors(file))
