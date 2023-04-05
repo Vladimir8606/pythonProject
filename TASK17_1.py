@@ -11,7 +11,7 @@ file='C:\\python\\sw1_dhcp_snooping.txt'
 out1='C:\\python\\result.csv'
 
 
-def print_heasers(headers, output):
+def print_headers(headers, output):
     with open(output, 'a', newline='') as dst:
         writer = csv.writer(dst, delimiter=',')
         writer.writerow(headers)
@@ -41,11 +41,10 @@ def write_dhcp_snooping_to_csv(filename, output):
                 with open(output, 'a', newline='') as dest:
                     writer = csv.writer(dest, delimiter=',')
                     writer.writerow(res)
-                    flag=False
 
 
 
 if __name__=='__main__':
-    print_heasers(header, out1)
+    print_headers(header, out1)
     for file in files:
         write_dhcp_snooping_to_csv(file, out1)
