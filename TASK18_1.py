@@ -12,9 +12,12 @@ def send_show_command(device,command):
     try:
         ssh=ConnectHandler(**device)
         result=ssh.send_command(command)
-    except:
+    except NetmikoTimeoutException:
         a=device['host']
         print(f' device {a} is not reachable')
+    except NetmikoAuthenticationException:
+        a = device['host']
+        print(f' device {a} authentication is wrong')
     return result
 
 
