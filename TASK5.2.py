@@ -82,7 +82,7 @@ print("{:<8} {:<8} {:<8} {:<8}".format(net_oct1, net_oct2, net_oct3, net_oct4))
 
 
 # Печатаем вывод маски сети
-print('\n' + '-' * 30)
+c
 print('Mask:' + '\n')
 
 
