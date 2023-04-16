@@ -12,7 +12,6 @@ output='C:\\python\\show_result.txt'
 
 def send_command_show(device,command):
     print(device)
-    #result = ''
     try:
         ssh = ConnectHandler(**device)
         promt=ssh.find_prompt()
